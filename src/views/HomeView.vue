@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Chat Helper 233</h1>
+    <h1>Chat Helper d</h1>
     <div v-if="!socketConnected">
       <button @click="connectSocket">Connect</button>
     </div>
@@ -13,12 +13,10 @@
 
 <script>
 import io from 'socket.io-client';
-// import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: 'HomeView',
   components: {
-    // HelloWorld,
   },
   data() {
     return {
@@ -27,6 +25,7 @@ export default {
   },
   methods: {
     connectSocket() {
+      console.log('process.env.VUE_APP_BACKEND_URL d->', process.env.VUE_APP_BACKEND_URL);
       this.socket = io(process.env.VUE_APP_BACKEND_URL);
       this.socket.on('connect', () => {
         console.log('Connected to server');
