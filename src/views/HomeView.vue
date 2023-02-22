@@ -1,12 +1,11 @@
 <template>
   <div>
-    <h1>Chat Helper g</h1>
+    <h1>Chat Helper i</h1>
     <div v-if="!socketConnected">
       <button @click="connectSocket">Connect</button>
     </div>
     <div v-else>
       <button @click="disconnectSocket">Disconnect</button>
-      <chat-room />
     </div>
   </div>
 </template>
