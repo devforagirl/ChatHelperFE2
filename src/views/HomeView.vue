@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Chat Helper e</h1>
+    <h1>Chat Helper g</h1>
     <div v-if="!socketConnected">
       <button @click="connectSocket">Connect</button>
     </div>
