@@ -1,11 +1,15 @@
 <template>
   <div>
-    <h1>Chat Helper i</h1>
+    <h1>Chat Helper o</h1>
     <div v-if="!socketConnected">
       <button @click="connectSocket">Connect</button>
     </div>
     <div v-else>
       <button @click="disconnectSocket">Disconnect</button>
+    </div>
+
+    <div>
+      <button @click="btnClick1">btnClick1</button>
     </div>
   </div>
 </template>
@@ -30,12 +34,21 @@ export default {
         console.log('Connected to server')
         this.socketConnected = true
       })
+
+      this.socket.on('response', () => {
+        console.log('response +1')
+      })
     },
     disconnectSocket() {
       this.socket.disconnect()
       this.socketConnected = false
       console.log('Disconnected from server')
     },
+
+    btnClick1(){
+      console.log('btnClick1')
+      this.socket.emit('message','btnClick1')
+    }
   },
 }
 </script>
