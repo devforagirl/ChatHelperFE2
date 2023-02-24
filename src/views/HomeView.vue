@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Chat Helper R</h1>
+    <h1>Chat Helper T</h1>
     <div v-if="!socketConnected">
       <button @click="connectSocket">Connect</button>
     </div>
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     connectSocket() {
-      console.log('process.env.VUE_APP_BACKEND_URL R->', process.env.VUE_APP_BACKEND_URL)
+      console.log('process.env.VUE_APP_BACKEND_URL T->', process.env.VUE_APP_BACKEND_URL)
       this.socket = io(process.env.VUE_APP_BACKEND_URL)
       this.socket.on('connect', () => {
         console.log('Connected to server')
